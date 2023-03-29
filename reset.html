@@ -10,12 +10,12 @@
     <script>
         let theList = ['Amanda','Judy','Alicia','Amelia','Deanna','Darlene'];
         theList.forEach(element => {
-        localStorage.setItem(element.toString(), 0);
-    });  
-    alert("All scores have been reset!");
-    theList.forEach(element => {
-    console.log(`${element} = ${parseInt(localStorage.getItem(element))}`);
-});
+            localStorage.setItem(element.toString(), 0);
+             });  
+        alert("All scores have been reset!");
+        theList.forEach(element => {
+            console.log(`${element} = ${parseInt(localStorage.getItem(element))}`);
+            });
     </script>
 </body>
 </html>

@@ -15,23 +15,10 @@ at lunch or in a meeting.  They'll just get selected again later.
 4) Larger names need to appear on the screen. The first version just uses the 
 browsers alert box.  It's functional, but not pretty or user friendly.*/
 
-//this class defines what a inpsector is. Their name and their score
-    //so we may not actually need this if we consider a reboot every day
-class Inspector{
-    constructor(name, score){
-        this.name = name;
-        this.score = score;
-    }  
-    //this method adds a point to the Inspectors score 
-    scoreIncrementer(){
-        this.score ++;
-    } 
-}
 //this function is used to randomise an array
 function getRandomSortValue() {
     return Math.floor(Math.random() * (3 + 1) - 2);
 }
-//document.write('word');
 
 //making a list of all the inspectors
 let theList = ['Amanda','Judy','Alicia','Amelia','Deanna','Darlene'];
@@ -55,7 +42,7 @@ if(parseInt(localStorage.getItem(theList[0])) <= (totalScore/theList.length) + 1
     let data = parseInt(localStorage.getItem(theList[0]));
     localStorage.setItem(theList[0], data + 1);
     isItAGoodName = true;
-    document.write(theList[0]);
+    document.write('<p id="nameStyle">' + theList[0] + '</p>');
 }
 theList.forEach(element => {
     console.log(`${element} = ${parseInt(localStorage.getItem(element))}`);

@@ -16,6 +16,7 @@ at lunch or in a meeting.  They'll just get selected again later.
 browsers alert box.  It's functional, but not pretty or user friendly.*/
 
 //this class defines what a inpsector is. Their name and their score
+    //so we may not actually need this if we consider a reboot every day
 class Inspector{
     constructor(name, score){
         this.name = name;
@@ -29,4 +30,35 @@ class Inspector{
 //this function is used to randomise an array
 function getRandomSortValue() {
     return Math.floor(Math.random() * (3 + 1) - 2);
+}
+//document.write('word');
+
+//making a list of all the inspectors
+let theList = ['Amanda','Judy','Alicia','Amelia','Deanna','Darlene'];
+/*This if statement will check to see if there is any local storage. if there isn't
+it will add them all and set their scores to zero*/
+if(localStorage.getItem(`${theList[0]}`) == null) {
+    theList.forEach(element => {
+        localStorage.setItem(element.toString(), 0);
+    });   
+}
+let isItAGoodName = false;
+while(isItAGoodName == false){
+//now to shuffles the list of Inspectors names (those are also my local storage keys)
+theList.sort(getRandomSortValue);
+/*before i actually use this person and add a point i need to add up the total and 
+compare the average to the selected persons score*/
+let totalScore = 0;
+theList.forEach(element => totalScore += (parseInt(localStorage.getItem(element))));
+if(parseInt(localStorage.getItem(theList[0])) <= (totalScore/theList.length) + 1) {
+    //if they meet the criteria they'll have a point added
+    let data = parseInt(localStorage.getItem(theList[0]));
+    localStorage.setItem(theList[0], data + 1);
+    isItAGoodName = true;
+    document.write(theList[0]);
+}
+theList.forEach(element => {
+    console.log(`${element} = ${parseInt(localStorage.getItem(element))}`);
+});
+console.log('------------------------------------------')
 }

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reset</title>
+</head>
+<body>
+    <script>
+        let theList = ['Amanda','Judy','Alicia','Amelia','Deanna','Darlene'];
+        theList.forEach(element => {
+        localStorage.setItem(element.toString(), 0);
+    });  
+    alert("All scores have been reset!");
+    theList.forEach(element => {
+    console.log(`${element} = ${parseInt(localStorage.getItem(element))}`);
+});
+    </script>
+</body>
+</html>

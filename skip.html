@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inspector Selector 2000</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <script>
+        //getting the name of the last person who was selected
+        let name = localStorage.getItem("selectedInspector");
+        //getting their score
+        let data = localStorage.getItem(name);
+        //prints out their name and score before subtracting 1
+        console.log(name + " " + data);
+        //setting their score to -1
+        localStorage.setItem(name, data - 1);
+        //prints out name and score now that adjustment was made
+        console.log(name + " " + localStorage.getItem(name));
+    </script>
+    <a id="skipButton" href="skip.html">Skip</a>
+    <a id="nextButton" href="index.html">Next</a> <br>
+    <p id="nameSyle">
+        <script src="application.js"></script>
+    </p>
+    
+    
+</body>
+</html>

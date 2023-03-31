@@ -1,19 +1,12 @@
-/*The purpose of this application is to build upon a previously made prototype
-and turn make something more user friendly.  It will randomly select an inspector
-to perform a first piece inspection for any department that needs one.  If an
-inspectors score (the amount of times they have done a first piece) gets too high
-compared to the average score, they will not be selected that round.
+/*The purpose of this application is to help evenly spread the work load in QC by 
+randomly selecting an Inspector to perform first piece inspection.  Because this is 
+at random and not in any particular order, there is a failsafe to prevent someone
+from being selected too many times compared to average score of the rest.  The scores
+are stored locally and can be reset by running the reset.html file.   
 
-List of things to be included in this version:
-1) A way to save the scores after the program is shut off. This will ensure that if
-someone gets selected a lot one day, their score will be high enough the next
-session to prevent them being selected too many times again.
-2) A way to easily reset all the scores might be necessary when there's a leave of
-abscence.
-3) An easy way to manually adjust scores or an option to skip somone.  Maybe they're
-at lunch or in a meeting.  They'll just get selected again later.
-4) Larger names need to appear on the screen. The first version just uses the 
-browsers alert box.  It's functional, but not pretty or user friendly.*/
+List of things that currently need to be added in.
+1) confetti effect
+*/
 
 //this function is used to randomise an array
 function getRandomSortValue() {
@@ -41,9 +34,17 @@ if(parseInt(localStorage.getItem(theList[0])) <= (totalScore/theList.length) + 1
     //if they meet the criteria they'll have a point added
     let data = parseInt(localStorage.getItem(theList[0]));
     localStorage.setItem(theList[0], data + 1);
+    //and now we can exit this while loop
     isItAGoodName = true;
+    //and this sends the string name back to the html doc
     document.write('<p id="nameStyle">' + theList[0] + '</p>');
+    /*now i want to make a placeholder for the skip function.  this local storage will save the selected
+    person's (index 0 of theList) name.  If the skip link is clicked, it will use the saved data to deduct
+    a point from the inspectors score before shuffling all of them again.*/
+    localStorage.setItem("selectedInspector", theList[0]);
 }
+//this prints the score of everyone even if no one was selected.  its also a good way to see how many times
+//the while loop looped before settling on someone
 theList.forEach(element => {
     console.log(`${element} = ${parseInt(localStorage.getItem(element))}`);
 });

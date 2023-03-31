@@ -1,12 +1,17 @@
 #nameStyle {
-    position:absolute;
-    margin-top: auto;
+    margin-top: auto; 
     color:navy;
     background-color: lightblue;
     text-align: center;
     font-size: 300px;
 }
 #nextButton {
+    margin-top: 10%;
     float: right;
+    font-size: 100px;
+}
+#skipButton{
+    margin-top: 10%;
+    float: left;
     font-size: 100px;
 }

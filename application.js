@@ -12,7 +12,6 @@ List of things that currently need to be added in.
 function getRandomSortValue() {
     return Math.floor(Math.random() * (3 + 1) - 2);
 }
-
 //making a list of all the inspectors
 let theList = ['Amanda','Judy','Alicia','Amelia','Deanna','Darlene'];
 /*This if statement will check to see if there is any local storage. if there isn't

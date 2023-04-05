@@ -1,9 +1,18 @@
 #nameStyle {
     margin-top: auto; 
     color:navy;
-    background-color: lightblue;
     text-align: center;
     font-size: 300px;
+    background-color: lightblue;
+    animation: pulse 13s;
+}
+@keyframes pulse {
+    0% {
+        background-color: navy;
+    }
+    100% {
+        background-color: lightblue;
+    }
 }
 #nextButton {
     margin-top: 10%;

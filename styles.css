@@ -15,12 +15,20 @@
     }
 }
 #nextButton {
+    color: darkgreen;
     margin-top: 10%;
     float: right;
     font-size: 100px;
 }
 #skipButton{
+    color: red;
     margin-top: 10%;
     float: left;
     font-size: 100px;
+}
+#nextButton:hover {
+    background-color: whitesmoke;
+}
+#skipButton:hover {
+    background-color: whitesmoke;
 }

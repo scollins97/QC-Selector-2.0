@@ -32,7 +32,15 @@ class Inspector extends HTMLElement {
                     background-color: lightblue;
                     text-align: center;
                     font-size: 300px;
+                    animation: pulse 13s;
                 }
+                @keyframes pulse {
+                    0% {
+                        background-color: navy;
+                    }
+                    100% {
+                        background-color: lightblue;
+                    }
             </style>
 
             <p id="name"></p>

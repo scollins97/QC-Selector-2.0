@@ -69,11 +69,12 @@ function getRandomSortValue() {
 let theList = ['Amanda','Judy','Alicia','Amelia','Deanna','Darlene'];
 /*This if statement will check to see if there is any local storage. if there isn't
 it will add them all and set their scores to zero*/
-if(localStorage.getItem(`${theList[0]}`) == null) {
-    theList.forEach(element => {
+    //this was changed to check everyone.  it used to only check the first index
+theList.forEach(element => {
+    if(localStorage.getItem(element) == null){
         localStorage.setItem(element.toString(), 0);
-    });
-}
+    }
+});
 let isItAGoodName = false;
 while(isItAGoodName == false){
 //now to shuffles the list of Inspectors names (those are also my local storage keys)

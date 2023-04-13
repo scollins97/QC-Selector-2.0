@@ -7,7 +7,7 @@ There were a few times where we needed to reset but without score loss:
 */
 
 //here is the list of current inspectors
-let theList = ['Amanda','Judy','Alicia','Amelia','Deanna','Darlene'];
+let theList = ['Judy','Alicia','Amelia','Deanna','Darlene'];
 //now lets check to make sure they have local storage if not, we'll declare them each at 0
 theList.forEach(element => {
     if(localStorage.getItem(element) == null){

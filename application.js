@@ -66,7 +66,7 @@ function getRandomSortValue() {
 }
 
 //making a list of all the inspectors
-let theList = ['Amanda','Judy','Alicia','Amelia','Deanna','Darlene'];
+let theList = ['Judy','Alicia','Amelia','Deanna','Darlene'];
 /*This if statement will check to see if there is any local storage. if there isn't
 it will add them all and set their scores to zero*/
     //this was changed to check everyone.  it used to only check the first index
